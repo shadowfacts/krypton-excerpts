@@ -1,10 +1,13 @@
 package net.shadowfacts.krypton.excerpts
 
 import net.shadowfacts.krypton.Page
-import net.shadowfacts.krypton.excerpts.config.excerptDelimiter
+import net.shadowfacts.krypton.excerpts.config.excerptEnd
+import net.shadowfacts.krypton.excerpts.config.excerptStart
 
 /**
  * @author shadowfacts
  */
 val Page.excerpt: String
-	get() = krypton.config.excerptDelimiter.split(input).filter(String::isNotBlank)[0]
+	get() {
+		return input.split(krypton.config.excerptStart)[1].split(krypton.config.excerptEnd)[0]
+	}

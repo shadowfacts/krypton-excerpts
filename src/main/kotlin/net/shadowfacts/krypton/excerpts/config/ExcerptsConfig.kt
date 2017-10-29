@@ -6,4 +6,5 @@ import net.shadowfacts.krypton.config.config
 /**
  * @author shadowfacts
  */
-var Configuration.excerptDelimiter: Regex by config(::Regex, fallback = { Regex("===") })
+var Configuration.excerptStart: String by config({ it }, fallback = { "<!-- start excerpt -->" })
+var Configuration.excerptEnd: String by config({ it }, fallback = { "<!-- end excerpt -->" })
